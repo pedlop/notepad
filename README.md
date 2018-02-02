@@ -1,2 +1,8 @@
-# notepad
-Creating a notepad project to test Angular 5 components and services
+# Notepad
+
+** Create a note **
+** List notes **
+** Update a note **
+** Delete a note **
+
+
