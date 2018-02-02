@@ -48,13 +48,9 @@ export class NoteService {
     });
     // parseInt(indexToUpdate, 0);
     console.log(indexToUpdate);
-    this.notes.splice(indexToUpdate);
+    this.notes.splice(indexToUpdate, 1);
     console.log(this.notes);
     return not;
-  }
-
-  private indexToHandleNote() {
-
   }
 
 }
