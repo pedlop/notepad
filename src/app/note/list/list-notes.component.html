@@ -1,0 +1,35 @@
+<div class="ui container">
+  <div class="title">
+      <h1>Notes</h1>
+  </div>
+
+
+  <div class="ui grid">
+    <div class="eight wide column">
+      <form class="form-inline" [formGroup]="noteForm" novalidate (ngSubmit)="onClickCreateNote()">
+        <div class="ui input">
+          <input class="form-control input-comment" formControlName="noteText" type="text" placeholder="Text">
+
+        </div>
+
+        <button class="positive ui button" [disabled]="noteForm.invalid" type="submit">Create Note</button>
+      </form>
+    </div>
+    <div class="eight wide column">
+      <ul type="square">
+        <li class="notes" *ngFor="let note of notes">
+          <h3> text: <b>{{note.text}}</b> -> id: <b>{{note.id}}</b></h3>
+          <div class="update-note">
+            <div class="ui input">
+              <input type="text" value="{{note.text}}" [formControl]="newText">
+            </div>
+            <button class="ui primary button" (click)="updateNote(note.id)">Update Note</button>
+          </div>
+          <div>
+            <button class="negative ui button" (click)="deleteNote(note.id)">Delete Note</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
